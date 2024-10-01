@@ -11,8 +11,13 @@ function createNewTodo() {
   const listItem = document.createElement("li");
 
 
-  listItem.appendChild(text);
-  list.appendChild(listItem);
-  listContainer.appendChild(list)
-  formText.value = "";
+  if (text.length == 0) {
+      alert("Please enter a task")
+  } else {
+    listItem.appendChild(text);
+    list.appendChild(listItem);
+    listContainer.appendChild(list)
+    formText.value = "";
+  }
+
 }
