@@ -1,23 +1,31 @@
+// Global Variables
 const button = document.getElementById("add-task");
-button.addEventListener("click", () => createNewTodo());
+const formText = document.getElementById("new-todo");
+
 
 function createNewTodo() {
-  const formText = document.getElementById("new-todo");
   const newTodo = formText.value;
   const text = document.createTextNode(newTodo);
-  // const list = document.getElementById("list");
-  const listContainer = document.getElementById("list-container")
-  const list = document.getElementById("list")
+  const listContainer = document.getElementById("list-container");
+  const list = document.getElementById("list");
   const listItem = document.createElement("li");
 
-
   if (text.length == 0) {
-      alert("Please enter a task")
+    alert("Please Enter a Task");
   } else {
     listItem.appendChild(text);
     list.appendChild(listItem);
-    listContainer.appendChild(list)
+    listContainer.appendChild(list);
     formText.value = "";
   }
-
 }
+
+// Press Enter To Add Task
+formText.addEventListener('keydown', function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault()
+    button.click()
+  }
+})
+
+button.addEventListener("click", () => createNewTodo());
