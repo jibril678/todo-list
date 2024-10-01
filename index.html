@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div class="list-container">
-        <h2>Todo List</h2>
+    <header id="header">
+        <h1>To-Do List</h1>
+    </header>
+    <main id="main-section">
+        <div id="list-container">
         <form id="form">
-            <input type="text" id="new-todo" name="new-todo" placeholder="Enter new task">
-            <button type="button" id="create-button">Create</button>
+            <input type="text" id="new-todo" name="new-todo" placeholder="Enter Task">
+            <button type="button" id="add-task">Add</button>
         </form>
-        <ul id="list"></ul>
+        <div id="list"></div>
         </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
