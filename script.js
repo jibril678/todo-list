@@ -2,7 +2,6 @@
 const button = document.getElementById("add-task");
 const formText = document.getElementById("new-todo");
 
-
 function createNewTodo() {
   const newTodo = formText.value;
   const text = document.createTextNode(newTodo);
@@ -21,11 +20,11 @@ function createNewTodo() {
 }
 
 // Press Enter To Add Task
-formText.addEventListener('keydown', function(event) {
+formText.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
-    event.preventDefault()
-    button.click()
+    event.preventDefault();
+    button.click();
   }
-})
+});
 
 button.addEventListener("click", () => createNewTodo());
